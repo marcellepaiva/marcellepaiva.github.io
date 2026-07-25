@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marcelle Paiva — UX/UI Designer</title>
+  <meta name="description" content="Portfólio de Marcelle Paiva, desenvolvedora front-end em transição para UX/UI Design. Criando experiências digitais modernas e intuitivas." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ======= HEADER ======= -->
+<header id="header">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#inicio" class="nav-logo">marcelle<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#processo">Processo</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
+          <span id="theme-icon">☀️</span>
+        </button>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+    <nav class="nav-mobile" id="nav-mobile" aria-label="Menu mobile">
+      <a href="#inicio">Início</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#processo">Processo</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ======= HERO ======= -->
+<section id="inicio">
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-layout">
+
+      <!-- Texto -->
+      <div class="hero-content">
+        <div class="hero-badge fade-in">
+          <span class="hero-dot"></span> Disponível para projetos
+        </div>
+        <h1 class="hero-title fade-in d1">
+          Olá, sou<br/><span class="hi">Marcelle Paiva</span>
+        </h1>
+        <p class="hero-role fade-in d2">Desenvolvedora Front-End <span class="role-sep">·</span> em transição para UX/UI Design</p>
+        <p class="hero-desc fade-in d3">
+          Criando interfaces funcionais, intuitivas e com foco na experiência do usuário.
+        </p>
+        <div class="hero-tags fade-in d3">
+          <span class="hero-tag">Figma</span>
+          <span class="hero-tag">UX Research</span>
+          <span class="hero-tag">Prototipagem</span>
+          <span class="hero-tag">HTML &amp; CSS</span>
+        </div>
+        <div class="hero-actions fade-in d4">
+          <a href="#projetos" class="btn btn-primary">Ver projetos →</a>
+          <a href="#contato" class="btn btn-outline">Entrar em contato</a>
+        </div>
+      </div>
+
+      <!-- Foto -->
+      <div class="hero-photo-wrap fade-in d2">
+        <div class="hero-photo-ring">
+          <div class="hero-photo">
+            <img
+              src="./assets/profile.jpg"
+              alt="Foto de Marcelle Paiva"
+              onerror="this.style.display='none';document.getElementById('photo-fallback').style.display='flex'"
+            />
+            <div id="photo-fallback" class="photo-fallback" style="display:none">MP</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <span>scroll</span> <span>↓</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ======= PROJECTS ======= -->
+<section id="projetos">
+  <div class="container">
+    <div class="projects-header">
+      <div>
+        <span class="section-tag fade-in">✦ Projetos</span>
+        <h2 class="section-title fade-in d1">Estudos de Caso</h2>
+        <p class="section-desc fade-in d2">Cada projeto aqui tem uma história: um problema real, um processo de pesquisa e uma solução pensada para quem vai usar.</p>
+      </div>
+    </div>
+    <!-- Estado vazio - remova quando adicionar projetos -->
+    <div class="projects-empty fade-in" id="projects-empty">
+      <div class="empty-icon">🎨</div>
+      <p class="empty-title">Estou finalizando meus primeiros estudos de caso em UX/UI.<br/>Cada um deles passa por pesquisa, prototipação e testes antes de chegar aqui.</p>
+      <p class="empty-sub">Volta em breve para conferir!</p>
+    </div>
+    <!-- Grid de projetos - descomente e popule quando tiver projetos -->
+    <div class="projects-grid" id="projects-grid" style="display:none">
+      <!-- Projetos serão adicionados aqui -->
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ======= PROCESSO ======= -->
+<section id="processo">
+  <div class="container">
+    <div class="processo-header">
+      <span class="section-tag fade-in">✦ Como trabalho</span>
+      <h2 class="section-title fade-in d1">Meu Processo de Design</h2>
+      <p class="section-desc fade-in d2">Gosto de entender antes de criar. Essas são as etapas que guiam meu trabalho do início ao fim.</p>
+    </div>
+    <div class="processo-grid">
+
+      <div class="processo-card fade-in">
+        <div class="processo-num">01</div>
+        <div class="processo-icon">🔍</div>
+        <h3 class="processo-title">Entendimento</h3>
+        <p class="processo-desc">Começo entendendo o problema de verdade, antes de pensar em qualquer solução. Quem vai usar? O que precisa funcionar? Onde estão os limites?</p>
+      </div>
+
+      <div class="processo-card fade-in d1">
+        <div class="processo-num">02</div>
+        <div class="processo-icon">🗣️</div>
+        <h3 class="processo-title">Pesquisa</h3>
+        <p class="processo-desc">Quando aplicável, faço entrevistas, benchmarking e análise de dados. Prefiro decisões com base em evidências, não em suposições.</p>
+      </div>
+
+      <div class="processo-card fade-in d2">
+        <div class="processo-num">03</div>
+        <div class="processo-icon">✏️</div>
+        <h3 class="processo-title">Wireframes</h3>
+        <p class="processo-desc">Antes de qualquer visual, estruturo os fluxos e a hierarquia de informação. É aqui que a lógica da interface toma forma.</p>
+      </div>
+
+      <div class="processo-card fade-in d3">
+        <div class="processo-num">04</div>
+        <div class="processo-icon">⚡</div>
+        <h3 class="processo-title">Prototipação</h3>
+        <p class="processo-desc">Crio protótipos navegáveis no Figma para testar fluxos com usuários reais e ajustar o que for necessário antes de partir para o desenvolvimento.</p>
+      </div>
+
+      <div class="processo-card fade-in d4">
+        <div class="processo-num">05</div>
+        <div class="processo-icon">💎</div>
+        <h3 class="processo-title">Refinamento Visual</h3>
+        <p class="processo-desc">Com os fluxos validados, entro no visual: tipografia, cores, espaçamentos e micro-interações que tornam a experiência mais fluida e agradável.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ======= ABOUT ======= -->
+<section id="sobre">
+  <div class="container">
+    <div class="about-grid">
+
+      <!-- Image Side -->
+      <div class="about-img-wrap fade-in">
+        <div class="about-avatar">
+          <img src="./assets/profile.jpg" alt="Marcelle Paiva"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="about-avatar-fallback" style="display:none">MP</div>
+        </div>
+        <div class="about-badge">
+          <big>✦</big> Em transição<br/>para UX/UI
+        </div>
+      </div>
+
+      <!-- Text Side -->
+      <div class="about-text">
+        <span class="section-tag fade-in">✦ Sobre mim</span>
+        <p class="fade-in d1" style="font-size: 1.5rem; font-family: var(--font-head); font-weight: 600; line-height: 1.4; color: var(--text); margin-bottom: 24px; margin-top: 16px;">
+          Estou em transição para a área de UX/UI Design e possuo bagagem em Análise e Desenvolvimento de Sistemas e experiência prática em Front-End / Web Design.
+        </p>
+
+        <p class="fade-in d3">
+          Trabalho com HTML, CSS e JavaScript, e estou aprofundando meu repertório em UX Research,
+          prototipação e design de interfaces no Figma.
+        </p>
+
+        <div class="about-skills fade-in d4">
+          <p class="skills-title">Habilidades</p>
+          <div class="skill-chips">
+            <span class="chip">🎨 UX/UI Design</span>
+            <span class="chip">✏️ Figma</span>
+            <span class="chip">📐 Wireframes</span>
+            <span class="chip">⚡ Prototipagem</span>
+            <span class="chip">💻 HTML &amp; CSS</span>
+            <span class="chip">🟨 JavaScript</span>
+            <span class="chip">📱 Responsividade</span>
+            <span class="chip">🔍 UX Research</span>
+            <span class="chip">♿ Acessibilidade</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ======= CONTACT ======= -->
+<section id="contato">
+  <div class="container">
+    <div class="contact-wrap">
+      <span class="section-tag fade-in">✦ Contato</span>
+      <h2 class="section-title fade-in d1">Vamos trabalhar juntos?</h2>
+      <p class="section-desc fade-in d2" style="margin:0 auto">
+        Estou aberta a oportunidades em UX/UI, estágios e posições júnior.
+        Se você tem um projeto interessante ou quer bater um papo sobre design, me chama.
+      </p>
+      <div class="contact-card fade-in d3">
+        <div class="contact-links">
+          <a href="mailto:marcelle.nicole.paiva@gmail.com" class="contact-link" id="link-email">
+            <span class="c-icon">📧</span>
+            <span class="c-value">
+              <span class="c-label">E-mail</span>
+              marcelle.nicole.paiva@gmail.com
+            </span>
+            <span class="c-arrow">→</span>
+          </a>
+          <a href="https://www.linkedin.com/in/marcellepaiva-tech/" target="_blank" rel="noopener" class="contact-link" id="link-linkedin">
+            <span class="c-icon">💼</span>
+            <span class="c-value">
+              <span class="c-label">LinkedIn</span>
+              /in/marcellepaiva-tech
+            </span>
+            <span class="c-arrow">→</span>
+          </a>
+        </div>
+        <div class="contact-sep"></div>
+        <!-- 
+        <a href="./assets/curriculo-marcelle-paiva.pdf" download class="btn btn-primary" id="btn-curriculo" style="width:100%;justify-content:center">
+          ⬇ Download do Currículo
+        </a>
+        -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FOOTER ======= -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-text">© 2026 Marcelle Paiva · Feito com 💜 e muito Figma</span>
+      <button class="back-top" id="back-top">Voltar ao topo ↑</button>
+    </div>
+  </div>
+</footer>
+
+<!-- ======= MODAL ======= -->
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-label="Detalhes do projeto">
+  <div class="modal" id="modal-content"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

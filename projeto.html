@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projeto — Marcelle Paiva</title>
+  <meta name="description" content="Estudo de caso detalhado por Marcelle Paiva, UX/UI Designer." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="projeto.css" />
+</head>
+<body>
+
+<!-- ======= HEADER ======= -->
+<header id="header">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">marcelle<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html#inicio">Início</a></li>
+        <li><a href="index.html#projetos">Projetos</a></li>
+        <li><a href="index.html#processo">Processo</a></li>
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
+          <span id="theme-icon">☀️</span>
+        </button>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+    <nav class="nav-mobile" id="nav-mobile" aria-label="Menu mobile">
+      <a href="index.html#inicio">Início</a>
+      <a href="index.html#projetos">Projetos</a>
+      <a href="index.html#processo">Processo</a>
+      <a href="index.html#sobre">Sobre</a>
+      <a href="index.html#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ======= PAGE CONTENT ======= -->
+<main id="projeto-main">
+
+  <!-- 1. COVER — título + galeria de telas em destaque -->
+  <section id="proj-cover" class="proj-cover">
+    <div class="proj-cover-bg" id="proj-cover-bg"></div>
+    <div class="container proj-cover-inner">
+      <a href="index.html#projetos" class="proj-back fade-in" id="proj-back">
+        <span>←</span> Voltar aos projetos
+      </a>
+      <span class="section-tag fade-in d1" id="proj-category"></span>
+      <h1 class="proj-title fade-in d2" id="proj-title"></h1>
+      <p class="proj-tagline fade-in d3" id="proj-tagline"></p>
+    </div>
+    <!-- Carrossel de telas no lugar da capa -->
+    <div class="proj-cover-solution fade-in d3" id="proj-cover-solution">
+      <!-- solution gallery injected here by JS -->
+    </div>
+  </section>
+
+  <!-- 2. RESULTADO & IMPACTO (resumo com métricas) -->
+  <section class="proj-impact">
+    <div class="container">
+      <div class="impact-card fade-in">
+        <span class="impact-label">✦ Resultado &amp; Impacto</span>
+        <p class="impact-text" id="proj-impact"></p>
+        <div class="impact-metrics" id="proj-metrics"></div>
+        <div id="proj-figma-top" class="impact-figma-btn-wrap" style="display:none;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="divider"></div>
+
+  <!-- 3. MELHORIAS ALCANÇADAS (resultados detalhados) -->
+  <section class="proj-results">
+    <div class="container">
+      <span class="section-tag fade-in">✦ Resultados</span>
+      <h2 class="section-title fade-in d1">Melhorias Alcançadas</h2>
+      <div class="results-list" id="proj-results-list">
+        <!-- items injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="divider"></div>
+
+  <!-- 4. CONTEXTO + PROBLEMA + OBJETIVO -->
+  <section class="proj-overview">
+    <div class="container proj-overview-grid">
+
+      <div class="proj-block fade-in">
+        <span class="proj-block-label">🧭 Contexto</span>
+        <p class="proj-block-text" id="proj-context"></p>
+      </div>
+
+      <div class="proj-block fade-in d1">
+        <span class="proj-block-label">⚠️ Problema</span>
+        <p class="proj-block-text" id="proj-problem"></p>
+      </div>
+
+      <div class="proj-block fade-in d2">
+        <span class="proj-block-label">🎯 Objetivo</span>
+        <p class="proj-block-text" id="proj-objective"></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="divider"></div>
+
+  <!-- 5. PROCESSO -->
+  <section class="proj-process">
+    <div class="container">
+      <span class="section-tag fade-in">✦ Processo</span>
+      <h2 class="section-title fade-in d1">Passo a Passo</h2>
+      <div class="process-steps" id="proj-steps">
+        <!-- steps injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="divider"></div>
+
+  <!-- 6. APRENDIZADOS (opcional) -->
+  <section class="proj-learnings" id="proj-learnings-section" style="display:none">
+    <div class="container">
+      <span class="section-tag fade-in">✦ Aprendizados</span>
+      <h2 class="section-title fade-in d1">O que este projeto me ensinou</h2>
+      <div class="learnings-list" id="proj-learnings-list">
+        <!-- items injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="divider" id="proj-learnings-divider" style="display:none"></div>
+
+  <!-- 7. FERRAMENTAS + LINK EXTERNO -->
+  <section class="proj-footer-row">
+    <div class="container proj-footer-inner">
+      <div class="proj-tools-wrap fade-in">
+        <span class="proj-block-label">🛠️ Ferramentas</span>
+        <div class="proj-tools" id="proj-tools"></div>
+      </div>
+      <div class="proj-cta-wrap fade-in d1" id="proj-cta-wrap">
+        <!-- external link injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- NAVIGATION BETWEEN PROJECTS -->
+  <section class="proj-nav-row">
+    <div class="container proj-nav-inner">
+      <a href="index.html#projetos" class="proj-nav-back btn btn-outline">
+        ← Ver todos os projetos
+      </a>
+      <div class="proj-nav-others" id="proj-nav-others">
+        <!-- other project links injected by JS -->
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ======= FOOTER ======= -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-text">© 2026 Marcelle Paiva · Feito com 💜 e muito Figma</span>
+      <button class="back-top" id="back-top">Voltar ao topo ↑</button>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="projeto.js"></script>
+</body>
+</html>
