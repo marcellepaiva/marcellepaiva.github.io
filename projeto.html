@@ -42,28 +42,30 @@
 <!-- ======= PAGE CONTENT ======= -->
 <main id="projeto-main">
 
-  <!-- 1. COVER — título + galeria de telas em destaque -->
+  <!-- 1. COVER — título apenas -->
   <section id="proj-cover" class="proj-cover">
     <div class="proj-cover-bg" id="proj-cover-bg"></div>
     <div class="container proj-cover-inner">
       <a href="index.html#projetos" class="proj-back fade-in" id="proj-back">
         <span>←</span> Voltar aos projetos
       </a>
-      <span class="section-tag fade-in d1" id="proj-category"></span>
       <h1 class="proj-title fade-in d2" id="proj-title"></h1>
       <p class="proj-tagline fade-in d3" id="proj-tagline"></p>
     </div>
-    <!-- Carrossel de telas no lugar da capa -->
-    <div class="proj-cover-solution fade-in d3" id="proj-cover-solution">
-      <!-- solution gallery injected here by JS -->
+  </section>
+
+  <!-- 2. HERO — imagem fullwidth de destaque -->
+  <section class="proj-hero-section" id="proj-hero-section">
+    <div class="proj-hero-img-wrap fade-in">
+      <img id="proj-hero-img" src="" alt="" class="proj-hero-img" loading="lazy" />
     </div>
   </section>
 
-  <!-- 2. RESULTADO & IMPACTO (resumo com métricas) -->
-  <section class="proj-impact">
+  <!-- 3. MÉTRICAS (se houver) -->
+  <section class="proj-impact" id="proj-impact-section">
     <div class="container">
       <div class="impact-card fade-in">
-        <span class="impact-label">✦ Resultado &amp; Impacto</span>
+        <span class="impact-label">✦ Contexto do Projeto</span>
         <p class="impact-text" id="proj-impact"></p>
         <div class="impact-metrics" id="proj-metrics"></div>
         <div id="proj-figma-top" class="impact-figma-btn-wrap" style="display:none;"></div>
@@ -74,11 +76,11 @@
   <!-- DIVIDER -->
   <div class="divider"></div>
 
-  <!-- 3. MELHORIAS ALCANÇADAS (resultados detalhados) -->
+  <!-- 4. RESULTADOS -->
   <section class="proj-results">
     <div class="container">
-      <span class="section-tag fade-in">✦ Resultados</span>
-      <h2 class="section-title fade-in d1">Melhorias Alcançadas</h2>
+      <span class="section-tag fade-in">✦ Entregáveis</span>
+      <h2 class="section-title fade-in d1">O que foi entregue</h2>
       <div class="results-list" id="proj-results-list">
         <!-- items injected by JS -->
       </div>
@@ -88,32 +90,7 @@
   <!-- DIVIDER -->
   <div class="divider"></div>
 
-  <!-- 4. CONTEXTO + PROBLEMA + OBJETIVO -->
-  <section class="proj-overview">
-    <div class="container proj-overview-grid">
-
-      <div class="proj-block fade-in">
-        <span class="proj-block-label">🧭 Contexto</span>
-        <p class="proj-block-text" id="proj-context"></p>
-      </div>
-
-      <div class="proj-block fade-in d1">
-        <span class="proj-block-label">⚠️ Problema</span>
-        <p class="proj-block-text" id="proj-problem"></p>
-      </div>
-
-      <div class="proj-block fade-in d2">
-        <span class="proj-block-label">🎯 Objetivo</span>
-        <p class="proj-block-text" id="proj-objective"></p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- DIVIDER -->
-  <div class="divider"></div>
-
-  <!-- 5. PROCESSO -->
+  <!-- 5. PROCESSO + PRINCIPAIS TELAS -->
   <section class="proj-process">
     <div class="container">
       <span class="section-tag fade-in">✦ Processo</span>
@@ -121,13 +98,15 @@
       <div class="process-steps" id="proj-steps">
         <!-- steps injected by JS -->
       </div>
+
+
     </div>
   </section>
 
   <!-- DIVIDER -->
   <div class="divider"></div>
 
-  <!-- 6. APRENDIZADOS (opcional) -->
+  <!-- 9. APRENDIZADOS (opcional) -->
   <section class="proj-learnings" id="proj-learnings-section" style="display:none">
     <div class="container">
       <span class="section-tag fade-in">✦ Aprendizados</span>
@@ -141,7 +120,7 @@
   <!-- DIVIDER -->
   <div class="divider" id="proj-learnings-divider" style="display:none"></div>
 
-  <!-- 7. FERRAMENTAS + LINK EXTERNO -->
+  <!-- 10. FERRAMENTAS + LINK EXTERNO -->
   <section class="proj-footer-row">
     <div class="container proj-footer-inner">
       <div class="proj-tools-wrap fade-in">

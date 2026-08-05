@@ -12,10 +12,20 @@ const PROJECTS = [
     desc: "Plataforma mobile de impacto social que conecta jovens de 18 a 24 anos às primeiras oportunidades profissionais, integrando capacitação, simulação de entrevistas e matching de vagas.",
     coverGradient: "linear-gradient(135deg,#0077B6 0%,#00B4D8 60%,#90E0EF 100%)",
     coverEmoji: "🚀",
-    coverImage: "./img/imagem_principal.png",
+    coverImage: "./img/Conecta Jovem/imagem_principal.png",
+    cardCover:   "./img/Conecta Jovem/Telas.png",
+    projectIcon: "./img/Conecta Jovem/icon_jovem.png",
+
+    /* Hero fullwidth e telas principais (Behance-style) */
+    heroImage: "./img/Conecta Jovem/imagem_principal.png",
+    keyScreens: [
+      { src: "./img/Conecta Jovem/Tela Principal.png",      label: "Home — Vagas recomendadas e cursos",   role: "primary" },
+      { src: "./img/Conecta Jovem/Vagas.png",               label: "Vagas — Matching por geolocalização",  role: "secondary" },
+      { src: "./img/Conecta Jovem/Simulador.png",           label: "Simulador de Entrevista",             role: "tertiary" }
+    ],
 
     /* Campos da página de detalhe */
-    impact: "O Conecta Jovem transforma a busca pelo emprego em uma jornada de desenvolvimento. Ao integrar educação, simulação de entrevistas e matching de vagas no mesmo fluxo, o projeto ataca a causa raiz do desemprego juvenil — promovendo inclusão digital e social para jovens de 18 a 24 anos. Esse projeto foi desenvolvido através da Jornada Menina de UX, que tinha como tema: Jovens querem trabalhar, mas enfrentam precarizações e falta de oportunidade.",
+    impact: "Desenvolvido durante a Jornada Menina de UX, o Conecta Jovem é uma plataforma que ajuda jovens a conquistar o primeiro emprego, reunindo capacitação, preparação para entrevistas e acesso a oportunidades em um só lugar. O projeto foi criado para tornar esse processo mais acessível e inclusivo para jovens de 18 a 24 anos.",
     context: "O Conecta Jovem é uma plataforma de impacto social projetada para mitigar as barreiras de entrada de jovens (18 a 24 anos) no mercado de trabalho. O projeto foca especialmente em jovens de escolas públicas que buscam o primeiro estágio ou emprego, mas se deparam com o paradoxo da exigência de experiência prévia — um ciclo difícil de romper sem apoio e oportunidade.",
     problem: "A pesquisa quantitativa com usuários reais revelou os principais obstáculos: 56,3% citam a falta de indicação e networking como maior barreira; 50% enfrentam a exigência de experiência prévia como critério eliminatório; 31,3% sofrem pela baixa oferta de vagas em sua região; e 18,8% pela falta de acesso ao ensino superior. Além disso, apenas 37,5% dos jovens se sentem totalmente preparados para processos seletivos, enquanto 62,5% precisam desenvolver conhecimentos técnicos para conseguir uma vaga.",
     objective: "Criar uma plataforma mobile acessível e empática que quebre o ciclo da inexperiência — integrando trilhas de capacitação (hard e soft skills), simulador de entrevistas para ganho de confiança, matching de vagas por geolocalização e acompanhamento transparente de candidaturas com feedback das empresas.",
@@ -28,56 +38,53 @@ const PROJECTS = [
         icon: "🔍",
         title: "Imersão e Pesquisa",
         desc: "Desk Research com dados do IBGE sobre a 'Geração Nem-Nem' e o desemprego juvenil — que é mais que o dobro da média nacional. Análise do contexto social e das barreiras estruturais que impedem jovens de 18 a 24 anos de entrarem no mercado de trabalho.",
-        images: [{ src: "./img/deskresearch.png", label: "Desk Research & Dados IBGE", landscape: true }]
+        images: [{ src: "./img/Conecta Jovem/deskresearch.png", label: "Desk Research & Dados IBGE", landscape: true }]
       },
       {
         icon: "🗣️",
         title: "Pesquisa com Usuários",
         desc: "Pesquisa quantitativa com pessoas reais para validar as dores do público-alvo. Resultado: 56,3% citam falta de networking; 50% enfrentam a barreira da experiência prévia; 31,3% sofrem com baixa oferta de vagas na região; apenas 37,5% se sentem preparados para processos seletivos.",
-        images: [{ src: "./img/pesquisaimg.png", label: "Síntese da Pesquisa Quantitativa", landscape: true }]
+        images: [{ src: "./img/Conecta Jovem/pesquisaimg.png", label: "Síntese da Pesquisa Quantitativa", landscape: true }]
       },
       {
         icon: "🏆",
         title: "Benchmark Competitivo",
         desc: "A análise dos principais concorrentes revelou que as soluções existentes priorizam processos burocráticos e perfis seniores, gerando atrito e insegurança em jovens em início de carreira. A oportunidade foi direcionar o foco para a jornada de preparação, oferecendo linguagem humanizada, treino prático para entrevistas e suporte focado em confiança.",
-        images: [{ src: "./img/benchmark.png", label: "Análise Competitiva", landscape: true }]
+        images: [{ src: "./img/Conecta Jovem/benchmark.png", label: "Análise Competitiva", landscape: true }]
       },
       {
         icon: "✏️",
         title: "Definição e Wireframes",
-        desc: "Estruturação dos fluxos e wireframes com foco em hierarquia de informação e navegação intuitiva.",
+        desc: "Estruturação dos fluxos e wireframes com foco em hierarquia de informação e navegação intuitiva. Abaixo, destaco as principais telas desenvolvidas nesta etapa:",
         images: [
-          { src: "./img/wireframes/01-boas-vindas.png",          label: "Wireframe — Boas-vindas" },
-          { src: "./img/wireframes/02-cadastro.png",             label: "Wireframe — Cadastro" },
-          { src: "./img/wireframes/03-conta-criada.png",         label: "Wireframe — Conta Criada" },
-          { src: "./img/wireframes/04-login.png",                label: "Wireframe — Login" },
-          { src: "./img/wireframes/05-home.png",                 label: "Wireframe — Home" },
-          { src: "./img/wireframes/06-encontre-vaga.png",        label: "Wireframe — Encontre uma Vaga" },
-          { src: "./img/wireframes/07-capacite-se.png",          label: "Wireframe — Capacite-se" },
-          { src: "./img/wireframes/08-perfil.png",               label: "Wireframe — Perfil" },
-          { src: "./img/wireframes/09-simulador-entrevista.png", label: "Wireframe — Simulador de Entrevista" },
-          { src: "./img/wireframes/10-minhas-candidaturas.png",  label: "Wireframe — Minhas Candidaturas" }
+          { src: "./img/Conecta Jovem/wireframes/01-boas-vindas.png",          label: "Wireframe — Boas-vindas" },
+          { src: "./img/Conecta Jovem/wireframes/05-home.png",                 label: "Wireframe — Home" },
+          { src: "./img/Conecta Jovem/wireframes/09-simulador-entrevista.png", label: "Wireframe — Simulador de Entrevista" }
         ]
       },
       {
         icon: "💎",
         title: "Prototipagem e UI Final",
-        desc: "Protótipo de alta fidelidade em Dark Mode com paleta Teal/Ciano. Tipografia Urbanist e Inter para acessibilidade. UX Writing empático e motivacional. Funcionalidades: Simulador de Entrevista, Hub de Capacitação com trilhas de aprendizado, Matching por Geolocalização e Área de Candidaturas com feedback.",
-        images: [{ src: "./img/imagem_principal.png", label: "Visão Geral — Fluxo Completo do App" }]
+        desc: "Protótipo de alta fidelidade em Dark Mode com paleta Teal/Ciano. Tipografia Urbanist e Inter para acessibilidade. UX Writing empático e motivacional. Funcionalidades: Simulador de Entrevista, Hub de Capacitação com trilhas de aprendizado, Matching por Geolocalização e Área de Candidaturas com feedback. Abaixo, destaco as principais telas desenvolvidas nesta etapa:",
+        images: [
+          { src: "./img/Conecta Jovem/Tela Principal.png", label: "Home — Vagas recomendadas" },
+          { src: "./img/Conecta Jovem/Vagas.png",          label: "Vagas — Matching por geolocalização" },
+          { src: "./img/Conecta Jovem/Simulador.png",      label: "Simulador de Entrevista" }
+        ]
       }
     ],
 
     solutionImages: [
-      { src: "./img/Login.png",                  label: "Login — Acesso à Conta" },
-      { src: "./img/Login realizado.png",        label: "Login Realizado com Sucesso" },
-      { src: "./img/Cadastro.png",               label: "Cadastro — Criação de Conta" },
-      { src: "./img/Conta criada.png",           label: "Conta Criada com Sucesso" },
-      { src: "./img/Tela Principal.png",         label: "Tela Principal — Home" },
-      { src: "./img/Vagas.png",                  label: "Vagas — Matching por Geolocalização" },
-      { src: "./img/Simulador.png",              label: "Simulador de Entrevista" },
-      { src: "./img/Cursos.png",                 label: "Cursos — Hub de Capacitação" },
-      { src: "./img/Minhas candidaturas.png",    label: "Minhas Candidaturas & Feedbacks" },
-      { src: "./img/Perfil.png",                 label: "Perfil — Ana Souza" }
+      { src: "./img/Conecta Jovem/Login.png",                  label: "Login — Acesso à Conta" },
+      { src: "./img/Conecta Jovem/Login realizado.png",        label: "Login Realizado com Sucesso" },
+      { src: "./img/Conecta Jovem/Cadastro.png",               label: "Cadastro — Criação de Conta" },
+      { src: "./img/Conecta Jovem/Conta criada.png",           label: "Conta Criada com Sucesso" },
+      { src: "./img/Conecta Jovem/Tela Principal.png",         label: "Tela Principal — Home" },
+      { src: "./img/Conecta Jovem/Vagas.png",                  label: "Vagas — Matching por Geolocalização" },
+      { src: "./img/Conecta Jovem/Simulador.png",              label: "Simulador de Entrevista" },
+      { src: "./img/Conecta Jovem/Cursos.png",                 label: "Cursos — Hub de Capacitação" },
+      { src: "./img/Conecta Jovem/Minhas candidaturas.png",    label: "Minhas Candidaturas & Feedbacks" },
+      { src: "./img/Conecta Jovem/Perfil.png",                 label: "Perfil — Ana Souza" }
     ],
 
     resultItems: [
@@ -92,107 +99,116 @@ const PROJECTS = [
     result: "Plataforma que integra capacitação, simulação de entrevistas e matching de vagas — atacando as 4 principais barreiras identificadas na pesquisa: falta de networking (56,3%), exigência de experiência prévia (50%), baixa oferta regional (31,3%) e despreparo para seleções (62,5% precisam de qualificação).",
     tools: ["Figma", "FigJam", "Design Thinking", "Google Forms"],
     figmaLink: "https://www.figma.com/design/vfMjtEjwdX8rx6Lmnyca4b/Conecta-Jovem?node-id=0-1&t=d9S7nlfRqmGkayAs-1",
+    figjamLink: "https://www.figma.com/board/a44ggVwTeu6KCPksPTgCVj/Pesquisa-e-Descoberta-Conecta-Jovem?node-id=0-1&t=PShYX0u5SwAU1D2r-1",
 
     metrics: [],
     slides: [
-      { src: "./img/imagem_principal.png", label: "Telas do Aplicativo" },
+      { src: "./img/Conecta Jovem/imagem_principal.png", label: "Telas do Aplicativo" },
       { emoji: "📊", label: "Pesquisa & Insights" }
     ]
   },
   {
     id: 2,
     title: "Átris",
-    inDevelopment: true,
-    category: "Web · SaaS · UX/UI Design · Acessibilidade",
-    tagline: "Redesign do fluxo de criação de projetos no TaskFlow",
-    desc: "O Átris redesenhou o fluxo de criação de projetos do TaskFlow eliminando os 4 principais pontos de abandono do onboarding. Ao simplificar um modal de 14 campos em um stepper de 3 etapas com feedback visual imediato, o projeto ataca a causa raiz do churn precoce.",
+    category: "UX/UI Design · SaaS B2B · Onboarding · Gestão de Projetos",
+    tagline: "Redesenhando o fluxo de criação do primeiro projeto para tornar o onboarding mais rápido, claro e seguro",
+    desc: "Redesign do fluxo de criação do primeiro projeto do TaskFlow — SaaS de gestão de projetos para agências e consultorias. O formulário foi reorganizado em três etapas progressivas, com melhorias de usabilidade, legibilidade e feedback visual que tornam o onboarding mais rápido, claro e seguro.",
     coverGradient: "linear-gradient(135deg,#6366f1 0%,#8b5cf6 50%,#a78bfa 100%)",
     coverEmoji: "⚡",
-    coverImage: "",
+    coverImage: "./img/Atris/Home.png",
+    cardCover: "./img/Atris/Card Projeto.png",
+    projectIcon: "./img/Atris/icon_atris.png",
+
+    /* Hero fullwidth e telas principais (Behance-style) */
+    heroImage: "./img/Atris/Tarefas.png",
+    keyScreens: [
+      { src: "./img/Atris/Home.png",              label: "Dashboard — Visão Kanban de Projetos", role: "primary" },
+      { src: "./img/Atris/criar_projeto_1.png",   label: "Novo Projeto — Etapa 1: Identificação", role: "secondary" },
+      { src: "./img/Atris/criar_projeto_3.png",   label: "Novo Projeto — Etapa 3: Detalhes",     role: "tertiary" }
+    ],
 
     /* Campos da página de detalhe */
-    impact: "O Átris redesenhou o fluxo de criação de projetos do TaskFlow eliminando os 4 principais pontos de abandono do onboarding. Ao simplificar o modal de 14 campos em um stepper de 3 etapas, adicionar feedback visual imediato e corrigir falhas de acessibilidade, o projeto ataca a causa raiz do churn precoce — promovendo retenção e primeiro sucesso do usuário.",
-    context: "TaskFlow é um SaaS B2B de gestão de projetos para agências de marketing, consultorias e estúdios criativos (5–100 colaboradores). O diferencial é um portal externo onde clientes aprovam entregas sem login completo.",
-    problem: "Mais de metade dos novos usuários abandona a plataforma antes de criar o primeiro projeto. O modal de criação tem 14 campos empilhados sem progresso visual, botões idênticos sem distinção e nenhum feedback ao concluir.",
-    objective: "Simplificar o modal de criação em um stepper de 3 etapas com indicador de progresso, Kanban visualmente aprimorado com etapas cromáticas, cards informativos com nome, responsável, prazo e badge de status, feedback imediato e permissionamento claro.",
-    solutionText: "Fluxo redesenhado com stepper de 3 etapas, Kanban cromático, cards informativos, toast de confirmação, templates inline e acessibilidade corrigida para WCAG 2.2. Resultado: redução drástica no abandono do onboarding e no tempo de criação do primeiro projeto.",
+    impact: "Átris é um projeto fictício de redesign do TaskFlow, um SaaS de gerenciamento de projetos, desenvolvido a partir de um desafio proposto pelo Claude Code. O desafio consistiu em analisar o fluxo de criação do primeiro projeto, identificar oportunidades de melhoria e redesenhar a experiência de onboarding. A proposta foi simplificar a jornada do usuário, reduzir barreiras de uso e criar uma interface mais intuitiva, tornando o processo mais fluido desde o primeiro acesso.",
+    context: "O TaskFlow é uma plataforma SaaS voltada para gestão de projetos, utilizada por agências, consultorias e estúdios criativos. Neste desafio de UX/UI, meu objetivo foi redesenhar o fluxo de criação do primeiro projeto — etapa essencial para a experiência inicial do usuário e um dos principais pontos de abandono da plataforma.",
+    problem: "Durante a análise do fluxo existente, identifiquei diversos problemas que tornavam a primeira experiência confusa e cansativa. O formulário reunia muitas informações em uma única tela, sem organização clara, o que aumentava a carga cognitiva e dificultava o preenchimento. Além disso, a interface apresentava falhas de usabilidade: baixa legibilidade, falta de diferenciação entre campos obrigatórios e opcionais, ausência de feedback após ações importantes e uma navegação que fazia o usuário perder informações já preenchidas. Esses fatores contribuíam para uma experiência frustrante e aumentavam a chance de desistência logo nos primeiros minutos de uso.",
+    objective: "Reduzir a fricção durante o onboarding e tornar a criação do primeiro projeto uma experiência mais rápida, clara e segura. Cada decisão de design foi pensada para diminuir dúvidas, evitar erros e aumentar a confiança do usuário durante todo o processo.",
+    research: "Análise do fluxo existente e identificação dos principais pontos de atrito na experiência do usuário. Auditoria de usabilidade com foco em legibilidade, hierarquia visual, feedback de interações e navegação entre etapas. Benchmark com ferramentas do mercado para identificar padrões de onboarding consolidados.",
+    wireframes: "Estruturação do novo fluxo em três etapas progressivas com os campos reorganizados por contexto — eliminando a sobrecarga da tela única e permitindo que o usuário avance de forma gradual. Validação da hierarquia e navegação antes do refinamento visual.",
+    solutionText: "Formulário dividido em três etapas progressivas. Campos reorganizados por contexto, com componentes mais rápidos substituindo elementos de alta fricção. Melhorias de legibilidade e distinção entre obrigatórios e opcionais. Busca facilitada para membros, seleção de datas acessível, resumo antes da conclusão, feedback após a criação e sugestões de próximos passos.",
 
     processSteps: [
       {
         icon: "🔍",
-        title: "Imersão e Pesquisa",
-        desc: "Desk Research com dados de uso da plataforma TaskFlow do último trimestre. Análise do contexto: 67 tickets/semana sobre \"como criar projeto\", tempo médio de 11 minutos (meta: 3 min) e NPS de onboarding de apenas 18. Identificação do fluxo de Criação do Primeiro Projeto como momento mais crítico do produto.",
-        images: [{ emoji: "📊", label: "Dados de Uso & Tickets de Suporte" }]
+        title: "Análise do Fluxo Original",
+        desc: "O formulário original concentrava 14 campos em uma única tela, sem progressão ou agrupamento. Labels com contraste insuficiente e campos obrigatórios indistinguíveis dos opcionais aumentavam a confusão desde o primeiro contato. O botão de template abria uma nova aba ao invés de aplicar diretamente, fazendo o usuário perder todos os dados já preenchidos ao retornar.",
+        images: [
+          { src: "./img/Atris/taskflow_02.png", label: "Análise — Formulário Original", landscape: true }
+        ]
       },
       {
-        icon: "🗺️",
-        title: "Pesquisa com Usuários / Journey Map",
-        desc: "Mapeamento do fluxo real de criação de projetos com usuários. Resultado: 59% abandonam no meio do fluxo; 52% nunca criam o primeiro projeto. Identificados 4 atritos principais: (1) listagem sem filtros, (2) modal com 14 campos, (3) botões \"Salvar\" e \"Salvar e Continuar\" idênticos, (4) ausência de feedback ao criar projeto.",
-        images: [{ emoji: "🗺️", label: "Journey Map — Fluxo de Criação" }]
+        icon: "⚠️",
+        title: "Problemas de Usabilidade e Acessibilidade",
+        desc: "O seletor de datas sobrepunha o formulário e cobria campos importantes durante o preenchimento. Não funcionava no Firefox e não tinha suporte a navegação por teclado, uma falha direta de acessibilidade.",
+        images: [
+          { src: "./img/Atris/taskflow_03.png", label: "Análise — Problemas no Date Picker", landscape: true }
+        ]
       },
       {
-        icon: "🏆",
-        title: "Benchmark Competitivo",
-        desc: "Análise de ferramentas concorrentes: Asana, Monday, Trello e ClickUp. Foco em como cada plataforma conduz o onboarding e a criação do primeiro projeto. Identificação de padrões: stepper com indicação de progresso, templates inline e feedback visual imediato como práticas consolidadas no mercado.",
-        images: [{ emoji: "🔎", label: "Análise Competitiva — Asana, Monday, ClickUp" }]
-      },
-      {
-        icon: "♿",
-        title: "Diagnóstico de Acessibilidade e Usabilidade",
-        desc: "Auditoria das heurísticas de Nielsen e critérios WCAG 2.2. Problemas críticos: contraste de labels 1.9:1 (mínimo WCAG: 4.5:1); date-picker sem navegação por teclado e incompatível com Firefox; campos sem distinção entre obrigatório e opcional; \"Aplicar Template\" abria nova aba e perdia dados preenchidos.",
-        images: [{ emoji: "📋", label: "Relatório de Acessibilidade & Heurísticas" }]
+        icon: "📉",
+        title: "Ausência de Feedback e Perda de Confiança",
+        desc: "Após salvar, nenhuma confirmação era exibida. O projeto recém-criado sumia no meio da listagem em ordem A–Z sem destaque visual. Sem saber se a ação havia sido concluída, 23% dos usuários tentavam criar o mesmo projeto novamente, gerando duplicatas e frustrando ainda mais a experiência.",
+        images: [
+          { src: "./img/Atris/taskflow_01.png", label: "Análise — Falta de Feedback", landscape: true }
+        ]
       },
       {
         icon: "💎",
-        title: "Prototipagem e Testes",
-        desc: "Redesign do fluxo completo: modal dividido em stepper de 3 etapas, Kanban com separação visual cromática, cards com informações essenciais visíveis sem cliques, feedback toast ao criar projeto e destaque do novo projeto na listagem. Protótipo validado com usuários do público-alvo.",
+        title: "Redesign do Fluxo em 3 Etapas",
+        desc: "Os 14 campos foram reorganizados em três etapas progressivas dentro do modal. Etapa 1: identificação, com chips de seleção rápida e template aplicável sem sair da tela. Etapa 2: equipe e prazos, com busca por nome e confirmação visual de membros. Etapa 3: detalhes opcionais e revisão completa antes de confirmar. Ao concluir, um toast de sucesso é exibido e o projeto aparece em destaque no topo da listagem. Abaixo, destaco as principais telas desenvolvidas nesta etapa:",
         images: [
-          { emoji: "📱", label: "Stepper — Etapa 1 de 3" },
-          { emoji: "🎨", label: "Kanban Cromático Redesenhado" }
+          { src: "./img/Atris/Home.png",           label: "Home — Dashboard Kanban",      fullwidth: true },
+          { src: "./img/Atris/criar_projeto_1.png", label: "Novo Projeto — Etapa 1",       fullwidth: true },
+          { src: "./img/Atris/Tarefas.png",         label: "Tarefas — Visão Global",       fullwidth: true }
         ]
       }
     ],
 
     solutionImages: [
-      { emoji: "🏠", label: "Home — Dashboard" },
-      { emoji: "📋", label: "Projetos — Kanban Cromático" },
-      { emoji: "✏️", label: "Criação de Projeto — Stepper" },
-      { emoji: "✅", label: "Tarefas — Visão Global" },
-      { emoji: "👤", label: "Minhas Tarefas" },
-      { emoji: "👥", label: "Equipe" }
+      { src: "./img/Atris/Home.png",                          label: "Home — Dashboard" },
+      { src: "./img/Atris/Card Projeto.png",                  label: "Projetos — Listagem Redesenhada" },
+      { src: "./img/Atris/taskflow_01.png",                   label: "TaskFlow — Etapa 1" },
+      { src: "./img/Atris/taskflow_02.png",                   label: "TaskFlow — Etapa 2" },
+      { src: "./img/Atris/taskflow_03.png",                   label: "TaskFlow — Etapa 3" },
+      { src: "./img/Atris/Projeto criado com sucesso!.png",   label: "Projeto Criado com Sucesso" },
+      { src: "./img/Atris/Tarefas.png",                       label: "Tarefas — Visão Global" },
+      { src: "./img/Atris/Equipe.png",                        label: "Equipe" }
     ],
 
     resultItems: [
-      { icon: "🪜", text: "Stepper de 3 Etapas: modal de 14 campos substituído por fluxo progressivo com indicador \"Etapa X de 3\", agrupando campos por contexto e reduzindo sobrecarga cognitiva" },
-      { icon: "🔔", text: "Feedback Imediato: toast de confirmação ao criar projeto + destaque visual do novo item na listagem — elimina confusão de \"projeto criado sem confirmação\" reportada em 67 tickets/semana" },
-      { icon: "🎨", text: "Kanban Cromático: etapas com cores e separação visual distintas. O usuário não precisa mais \"ler para entender\" o estado de cada coluna" },
-      { icon: "🃏", text: "Cards Informativos: cada card exibe nome, responsável, prazo e badge de status sem cliques adicionais — com modal interno para tarefas, anexos, comentários e @marcação" },
-      { icon: "📄", text: "Templates Inline: \"Aplicar Template\" agora abre inline, sem nova aba. Dados preenchidos são preservados. Opções: do zero, Template de Marketing, Template de Social" },
-      { icon: "♿", text: "Acessibilidade: contraste corrigido para WCAG 2.2 (mín. 4.5:1), date-picker com navegação por teclado e compatibilidade Firefox, distinção clara entre campos obrigatórios e opcionais" },
-      { icon: "🔐", text: "Permissionamento: apenas criador e responsável pela tarefa podem editar, excluir ou finalizar. Clientes externos acessam apenas o portal de revisão" }
+      { icon: "🪜", text: "Formulário dividido em três etapas progressivas — o usuário avança de forma gradual, sem precisar lidar com todas as informações de uma só vez" },
+      { icon: "🗂️", text: "Campos reorganizados por contexto, com componentes mais rápidos substituindo elementos que exigiam muitas interações" },
+      { icon: "🔤", text: "Hierarquia visual e legibilidade melhoradas, com distinção clara entre campos obrigatórios e opcionais" },
+      { icon: "👥", text: "Busca facilitada para adicionar membros da equipe, com confirmação visual imediata de quem foi incluído" },
+      { icon: "📅", text: "Seleção de datas mais simples e acessível, sem componentes que causavam perda de navegação ou dados" },
+      { icon: "🔔", text: "Feedback visual após a criação do projeto e destaque para o item recém-criado na listagem — evitando duplicidades e confirmando que a ação foi concluída" },
+      { icon: "🚀", text: "Sugestões de próximos passos para ajudar o usuário a continuar utilizando a plataforma após criar o primeiro projeto" }
     ],
 
-    result: "Redesign completo do onboarding do TaskFlow: stepper de 3 etapas, Kanban cromático, feedback imediato e acessibilidade WCAG 2.2 — atacando as 4 causas raiz de um NPS de 18 e 52% de abandono antes do primeiro projeto.",
-    tools: ["Figma", "FigJam", "Heurísticas de Nielsen", "WCAG 2.2"],
-    figmaLink: "#", /* substitua pelo link real do Figma */
+    result: "Redesign completo do fluxo de criação do primeiro projeto do TaskFlow: formulário dividido em três etapas, campos reorganizados por contexto, melhorias de legibilidade e hierarquia visual, feedback imediato e sugestões de próximos passos — tornando o onboarding mais rápido, claro e seguro.",
+    tools: ["Figma", "FigJam", "Claude Code"],
+    figmaLink: "https://www.figma.com/design/fSPuZpzDZnJle9jLv9NTML/%C3%81tris?node-id=0-1&t=Nem4JRoJIkKmsHv9-1",
+    figjamLink: "https://www.figma.com/board/J0lDbpLF4A3HlV7oCz60rl/Pesquisa-e-Descoberta-%C3%81tris?node-id=0-1&t=VT6KkBqZf9dqMeBn-1",
 
     metrics: [
-      { num: "52%", label: "Abandonavam antes do 1º projeto" },
-      { num: "59%", label: "Taxa de abandono no fluxo" },
-      { num: "18", label: "NPS do onboarding" }
+      { num: "52%", label: "Não criavam o 1º projeto no trial" },
+      { num: "41%", label: "Taxa de conclusão do fluxo" },
+      { num: "18",  label: "NPS do onboarding" },
+      { num: "38%", label: "Churn nos primeiros 7 dias" }
     ],
     slides: [
-      { emoji: "🪜", label: "Stepper de Criação" },
-      { emoji: "🎨", label: "Kanban Cromático" },
-      { emoji: "📊", label: "Métricas & Impacto" }
-    ],
-    learnings: [
-      { icon: "🎯", text: "O primeiro sucesso do usuário — não o cadastro — é o momento mais crítico de um SaaS." },
-      { icon: "📋", text: "Formulários longos sem indicação de progresso causam abandono independentemente da qualidade do produto." },
-      { icon: "🔔", text: "Feedback ausente é interpretado como erro: o usuário tenta de novo e gera duplicidade de dados." },
-      { icon: "🌐", text: "Compatibilidade de browser deve ser validada no início, não no final do projeto." },
-      { icon: "✳️", text: "Distinção clara entre campos obrigatórios e opcionais reduz significativamente o tempo de preenchimento." },
-      { icon: "📄", text: "Templates que interrompem o fluxo (nova aba) são ignorados — precisam ser inline para funcionar." }
+      { src: "./img/Atris/Home.png",          label: "Home — Dashboard" },
+      { src: "./img/Atris/Card Projeto.png",  label: "Projetos — Listagem Redesenhada" },
+      { src: "./img/Atris/taskflow_01.png",   label: "TaskFlow — Etapa 1" }
     ]
   }
 ];
@@ -213,6 +229,8 @@ document.addEventListener("DOMContentLoaded", () => {
 function initTheme() {
   const saved = localStorage.getItem("theme") || "dark";
   applyTheme(saved);
+  // Não registra o listener na página de projeto (projeto.js é responsável lá)
+  if (document.body.closest("[data-page='projeto']") || document.getElementById("projeto-main")) return;
   document.getElementById("theme-toggle").addEventListener("click", () => {
     const current = document.documentElement.getAttribute("data-theme");
     applyTheme(current === "dark" ? "light" : "dark");
@@ -230,53 +248,63 @@ function renderProjects() {
   const empty = document.getElementById("projects-empty");
   if (!grid) return;
 
-  // Mostra o grid e esconde o estado vazio
   grid.style.display = "";
   if (empty) empty.style.display = "none";
 
   grid.innerHTML = PROJECTS.map(p => {
-    const screens = p.solutionImages || [];
-    const hasScreens = screens.some(s => s.src);
 
+    // — CARD COVER —
     let coverHtml;
-    if (hasScreens) {
-      const validScreens = screens.filter(s => s.src);
-      const slidesHtml = validScreens.map(s =>
-        `<div class="card-slide">
-          <img src="${s.src}" alt="${s.label || p.title}" loading="lazy">
-        </div>`
-      ).join("");
-      const dotsHtml = validScreens.length > 1
-        ? `<div class="card-slider-dots">${validScreens.map((_, i) =>
-            `<span class="cs-dot${i === 0 ? ' active' : ''}" data-i="${i}"></span>`
-          ).join("")}</div>`
-        : "";
-      const navHtml = validScreens.length > 1
-        ? `<button class="card-slider-btn cs-prev" onclick="event.stopPropagation();csNav(this,-1)">‹</button>
-           <button class="card-slider-btn cs-next" onclick="event.stopPropagation();csNav(this,1)">›</button>`
-        : "";
-      coverHtml = `<div class="card-cover">
-        <div class="card-slider" data-idx="0" data-len="${validScreens.length}">
-          <div class="card-slides-track">${slidesHtml}</div>
-          ${navHtml}
-          ${dotsHtml}
-        </div>
-        <span class="card-cat">${p.category}</span>
+    if (p.projectIcon) {
+      // Se tem ícone, a capa é apenas o ícone centralizado num fundo
+      coverHtml = `<div class="card-cover card-cover--icon-only" style="background:${p.coverGradient || 'var(--surface2)'}">
+        <img src="${p.projectIcon}" alt="${p.title} icon" loading="lazy" class="card-cover-icon-img">
+      </div>`;
+    } else if (p.cardCover) {
+      // Imagem estática de capa (mockup/telas)
+      coverHtml = `<div class="card-cover card-cover--static">
+        <img src="${p.cardCover}" alt="Capa ${p.title}" loading="lazy" class="card-cover-static-img">
       </div>`;
     } else {
-      coverHtml = `<div class="card-cover" style="background:${p.coverGradient}">
-        <img src="${p.coverImage}" alt="Capa ${p.title}" loading="lazy"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-        <span class="card-cover-emoji" style="display:none">${p.coverEmoji}</span>
-        <span class="card-cat">${p.category}</span>
-      </div>`;
+      const screens = p.solutionImages || [];
+      const hasScreens = screens.some(s => s.src);
+      if (hasScreens) {
+        const validScreens = screens.filter(s => s.src);
+        const slidesHtml = validScreens.map(s =>
+          `<div class="card-slide">
+            <img src="${s.src}" alt="${s.label || p.title}" loading="lazy">
+          </div>`
+        ).join("");
+        const dotsHtml = validScreens.length > 1
+          ? `<div class="card-slider-dots">${validScreens.map((_, i) =>
+              `<span class="cs-dot${i === 0 ? ' active' : ''}" data-i="${i}"></span>`
+            ).join("")}</div>`
+          : "";
+        const navHtml = validScreens.length > 1
+          ? `<button class="card-slider-btn cs-prev" onclick="event.stopPropagation();csNav(this,-1)">‹</button>
+             <button class="card-slider-btn cs-next" onclick="event.stopPropagation();csNav(this,1)">›</button>`
+          : "";
+        coverHtml = `<div class="card-cover">
+          <div class="card-slider" data-idx="0" data-len="${validScreens.length}">
+            <div class="card-slides-track">${slidesHtml}</div>
+            ${navHtml}
+            ${dotsHtml}
+          </div>
+        </div>`;
+      } else {
+        coverHtml = `<div class="card-cover" style="background:${p.coverGradient}">
+          <img src="${p.coverImage}" alt="Capa ${p.title}" loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="card-cover-emoji" style="display:none">${p.coverEmoji}</span>
+        </div>`;
+      }
     }
 
     const isDev = p.inDevelopment;
     const onClick = isDev ? "" : `onclick="window.location.href='projeto.html?id=${p.id}'"`;
     const cursorStyle = isDev ? `style="cursor: default; opacity: 0.8;"` : "";
     const ariaRole = isDev ? "" : `role="link" aria-label="Ver estudo de caso: ${p.title}"`;
-    const btnHtml = isDev 
+    const btnHtml = isDev
       ? `<span class="card-btn" style="color: var(--muted); cursor: default;">Em desenvolvimento 🚧</span>`
       : `<span class="card-btn">Ver estudo de caso <span>→</span></span>`;
 
@@ -304,6 +332,7 @@ function renderProjects() {
   initCardSliders();
   initScrollFade();
 }
+
 
 /* ---------- MODAL ---------- */
 let slideIdx = 0;
@@ -722,4 +751,3 @@ function initCursorTrail() {
 
   draw();
 }
-

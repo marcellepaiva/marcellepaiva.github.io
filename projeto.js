@@ -65,7 +65,9 @@ function loadProject() {
   }
 
   renderCover(project);
-  renderSolution(project);  // galeria de telas vai para dentro do cover (hero)
+  renderHeroImage(project);      // imagem fullwidth hero
+  renderKeyInfo(project);        // Sobre / Problema / Solução
+  renderKeyScreens(project);     // 3 telas principais (layout 1+2)
   renderImpact(project);
   renderResults(project);
   renderOverview(project);
@@ -79,11 +81,111 @@ function loadProject() {
 
 /* 1. COVER */
 function renderCover(p) {
-  document.getElementById("proj-category").textContent = p.category;
-  document.getElementById("proj-title").textContent = p.title;
-  document.getElementById("proj-tagline").textContent = p.tagline;
+  document.getElementById("proj-title").textContent    = p.title;
+  document.getElementById("proj-tagline").textContent  = p.tagline;
   document.title = `${p.title} — Marcelle Paiva`;
+
+  // Ícone ao lado do título (lado direito)
+  if (p.projectIcon) {
+    const titleEl = document.getElementById("proj-title");
+    
+    // Cria um wrapper para não quebrar o layout do container pai
+    const titleRow = document.createElement("div");
+    titleRow.className = "proj-title-row";
+    
+    const icon = document.createElement("img");
+    icon.src = p.projectIcon;
+    icon.alt = `${p.title} icon`;
+    icon.className = "proj-cover-icon";
+    
+    // Coloca o wrapper onde o título estava, move o título para dentro e adiciona o ícone
+    titleEl.parentNode.insertBefore(titleRow, titleEl);
+    titleRow.appendChild(titleEl);
+    titleRow.appendChild(icon);
+  }
 }
+
+/* 1b. HERO IMAGE — imagem fullwidth de destaque */
+function renderHeroImage(p) {
+  // Se o projeto tem ícone próprio, oculta o hero
+  if (p.projectIcon) {
+    const section = document.getElementById("proj-hero-section");
+    if (section) section.style.display = "none";
+    return;
+  }
+  const img = document.getElementById("proj-hero-img");
+  if (!img) return;
+  const src = p.heroImage || p.coverImage || "";
+  if (!src) {
+    const section = document.getElementById("proj-hero-section");
+    if (section) section.style.display = "none";
+    return;
+  }
+  img.src = src;
+  img.alt = `Hero — ${p.title}`;
+  const isMobile = p.category && p.category.toLowerCase().includes("mobile");
+  if (isMobile) img.closest(".proj-hero-img-wrap").classList.add("proj-hero-mobile");
+}
+
+/* 1c. KEY INFO — Sobre / Problema / Solução */
+function renderKeyInfo(p) {
+  // Sobre: versão curta do impact/desc
+  const sobre = p.desc || p.impact || "";
+  // Problema: primeira frase ou frase principal do problem
+  const problemaFull = p.problem || "";
+  const problemaCurto = problemaFull.split(".")[0] + ".";
+  // Solução: primeira frase do solutionText ou objective
+  const solucaoFull = p.solutionText || p.objective || "";
+  const solucaoCurta = solucaoFull.split(".").slice(0, 2).join(".") + ".";
+
+  setText("proj-key-sobre",   sobre);
+  setText("proj-key-problema", problemaCurto.length > 10 ? problemaCurto : problemaFull);
+  setText("proj-key-solucao",  solucaoCurta.length > 10 ? solucaoCurta  : solucaoFull);
+}
+
+/* 1d. KEY SCREENS — 3 telas principais (layout 1 grande + 2 menores) */
+function renderKeyScreens(p) {
+  const container = document.getElementById("proj-screens-layout");
+  if (!container) return;
+
+  const screens = p.keyScreens || [];
+  if (!screens.length) {
+    const section = document.getElementById("proj-key-screens-section");
+    if (section) section.style.display = "none";
+    return;
+  }
+
+  // Detecta se projeto é mobile (telas portrait)
+  const isMobile = p.category && p.category.toLowerCase().includes("mobile");
+
+  const [primary, secondary, tertiary] = screens;
+
+  container.innerHTML = `
+    <div class="screens-primary-wrap">
+      <div class="screen-item screen-primary" onclick="openLightboxNav(0)">
+        <img src="${primary.src}" alt="${primary.label}" loading="lazy" class="${isMobile ? 'screen-mobile' : 'screen-desktop'}" />
+        <div class="screen-caption">${primary.label}</div>
+      </div>
+    </div>
+    ${ (secondary || tertiary) ? `
+    <div class="screens-secondary-row">
+      ${ secondary ? `
+      <div class="screen-item screen-secondary" onclick="openLightboxNav(1)">
+        <img src="${secondary.src}" alt="${secondary.label}" loading="lazy" class="${isMobile ? 'screen-mobile' : 'screen-desktop'}" />
+        <div class="screen-caption">${secondary.label}</div>
+      </div>` : '' }
+      ${ tertiary ? `
+      <div class="screen-item screen-tertiary" onclick="openLightboxNav(2)">
+        <img src="${tertiary.src}" alt="${tertiary.label}" loading="lazy" class="${isMobile ? 'screen-mobile' : 'screen-desktop'}" />
+        <div class="screen-caption">${tertiary.label}</div>
+      </div>` : '' }
+    </div>` : '' }
+  `;
+
+  // Alimenta o lightbox com as keyScreens
+  window._galleryImages = screens.map(s => s.src);
+}
+
 
 /* 2. IMPACT */
 function renderImpact(p) {
@@ -102,12 +204,23 @@ function renderImpact(p) {
 
   const figmaTopWrap = document.getElementById("proj-figma-top");
   if (figmaTopWrap) {
-    if (p.figmaLink && p.figmaLink !== "#") {
+    if ((p.figmaLink && p.figmaLink !== "#") || (p.figjamLink && p.figjamLink !== "#")) {
       figmaTopWrap.style.display = "flex";
-      figmaTopWrap.innerHTML = `
-        <span class="figma-label">🔗 LINK EXTERNO</span>
-        <a href="${p.figmaLink}" target="_blank" class="btn btn-primary">Ver protótipo no Figma ↗</a>
-      `;
+      figmaTopWrap.style.flexDirection = "column"; // Organiza os botões em coluna se tiver mais de um
+      figmaTopWrap.style.gap = "8px";
+      
+      let html = `<span class="figma-label">🔗 LINKS EXTERNOS</span><div style="display:flex; gap:12px; flex-wrap:wrap;">`;
+      
+      if (p.figmaLink && p.figmaLink !== "#") {
+        html += `<a href="${p.figmaLink}" target="_blank" class="btn btn-primary">Ver protótipo no Figma ↗</a>`;
+      }
+      
+      if (p.figjamLink && p.figjamLink !== "#") {
+        html += `<a href="${p.figjamLink}" target="_blank" class="btn btn-primary">Pesquisa e Descoberta no FigJam ↗</a>`;
+      }
+      
+      html += `</div>`;
+      figmaTopWrap.innerHTML = html;
     } else {
       figmaTopWrap.style.display = "none";
     }
@@ -133,20 +246,20 @@ function renderProcess(p) {
         <h3 class="step-title">${step.icon ? step.icon + " " : ""}${step.title}</h3>
         <p class="step-desc">${step.desc}</p>
         ${step.images && step.images.length
-          ? `<div class="step-images">${step.images.map(img =>
+          ? `<div class="step-images${step.images.some(i => i.fullwidth) ? ' step-images--fullwidth' : ''}">${step.images.map(img =>
               img.src
-                ? `<div class="step-img-wrap${img.landscape ? ' step-img-wrap--landscape' : ''}" onclick="openLightbox('${img.src}')">
-                     <img src="${img.src}" alt="${img.label || ""}" loading="lazy">
-                     <div class="solution-img-caption">${img.label || ""}</div>
+                ? `<div class="step-img-wrap${img.landscape ? ' step-img-wrap--landscape' : ''}${img.fullwidth ? ' step-img-wrap--fullwidth' : ''}" onclick="openLightbox('${img.src}')">
+                     <img src="${img.src}" alt="${img.label || ''}" loading="lazy">
+                     <div class="solution-img-caption">${img.label || ''}</div>
                    </div>`
                 : `<div class="step-img-wrap">
                      <div class="step-img-placeholder">
-                       <span>${img.emoji || "🖼️"}</span>
-                       <p>${img.label || "Imagem em breve"}</p>
+                       <span>${img.emoji || '🖼️'}</span>
+                       <p>${img.label || 'Imagem em breve'}</p>
                      </div>
                    </div>`
-            ).join("")}</div>`
-          : ""}
+            ).join('')}</div>`
+          : ''}
       </div>
     </div>
   `).join("");
@@ -238,15 +351,32 @@ function renderFooterRow(p) {
   ).join("");
 
   const ctaWrap = document.getElementById("proj-cta-wrap");
-  if (p.figmaLink) {
-    ctaWrap.innerHTML = `
-      <span class="proj-cta-label">🔗 Link externo</span>
-      <a href="${p.figmaLink}" target="_blank" rel="noopener"
-         class="btn btn-primary" id="btn-figma-${p.id}">
-        Ver protótipo no Figma ↗
-      </a>
-    `;
+  let html = "";
+  
+  if ((p.figmaLink && p.figmaLink !== "#") || (p.figjamLink && p.figjamLink !== "#")) {
+    html += `<span class="proj-cta-label">🔗 LINKS EXTERNOS</span>`;
+    html += `<div style="display:flex; gap:12px; flex-wrap:wrap; justify-content: flex-end;">`;
+    
+    if (p.figmaLink && p.figmaLink !== "#") {
+      html += `
+        <a href="${p.figmaLink}" target="_blank" rel="noopener" class="btn btn-primary" id="btn-figma-${p.id}">
+          Ver protótipo no Figma ↗
+        </a>
+      `;
+    }
+    
+    if (p.figjamLink && p.figjamLink !== "#") {
+      html += `
+        <a href="${p.figjamLink}" target="_blank" rel="noopener" class="btn btn-primary" id="btn-figjam-${p.id}">
+          Pesquisa e Descoberta no FigJam ↗
+        </a>
+      `;
+    }
+    
+    html += `</div>`;
   }
+  
+  ctaWrap.innerHTML = html;
 }
 
 /* NAVIGATION (outros projetos) */

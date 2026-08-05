@@ -3,6 +3,300 @@
    Importa tokens e utilitários de style.css
    ============================================= */
 
+/* =============================================
+   HERO FULLWIDTH — imagem grande de destaque
+   ============================================= */
+
+/* Ícone do projeto ao lado do título na capa */
+.proj-title-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.proj-cover-icon {
+  width: 320px;
+  height: 320px;
+  border-radius: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Card da home — capa estática */
+.card-cover--static {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-cover-static-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.project-card:hover .card-cover-static-img {
+  transform: scale(1.03);
+}
+
+/* Card da home — título com ícone */
+.card-title--icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.card-proj-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.proj-hero-section {
+  width: 100%;
+  background: var(--surface);
+  padding: 0 24px;
+}
+
+.proj-hero-img-wrap {
+  width: 100%;
+  max-height: 640px;
+  overflow: hidden;
+  position: relative;
+  background: var(--surface2);
+  border-radius: 20px;
+}
+
+/* Overlay gradiente no topo e no bottom para transição suave */
+.proj-hero-img-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, var(--bg), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+.proj-hero-img-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(to top, var(--bg), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.proj-hero-img {
+  width: 100%;
+  max-height: 640px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.proj-hero-img-wrap:hover .proj-hero-img {
+  transform: scale(1.02);
+}
+
+/* Para projetos mobile (portrait): centraliza e exibe como mockup */
+.proj-hero-img-wrap.proj-hero-mobile {
+  max-height: 520px;
+  background: linear-gradient(135deg, rgba(244,63,94,.06) 0%, rgba(244,63,94,.02) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+.proj-hero-img-wrap.proj-hero-mobile .proj-hero-img {
+  width: auto;
+  max-width: 100%;
+  max-height: 440px;
+  object-fit: contain;
+  border-radius: 0;
+}
+.proj-hero-img-wrap.proj-hero-mobile::before,
+.proj-hero-img-wrap.proj-hero-mobile::after { display: none; }
+
+/* =============================================
+   KEY INFO — Sobre / Problema / Solução
+   ============================================= */
+
+.proj-key-info {
+  padding: 72px 0;
+  position: relative;
+}
+
+.proj-key-info-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.proj-key-block {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 32px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              border-color 0.3s ease, box-shadow 0.35s ease;
+}
+
+/* Linha colorida no topo de cada bloco */
+.proj-key-block::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.proj-key-block:hover { transform: translateY(-5px); border-color: rgba(244,63,94,.35); box-shadow: 0 16px 40px rgba(0,0,0,.14); }
+.proj-key-block:hover::before { transform: scaleX(1); }
+
+/* Destaque visual para o bloco "Sobre" (maior, mais hierarquia) */
+.proj-key-sobre {
+  background: linear-gradient(135deg, rgba(244,63,94,.07) 0%, var(--surface) 60%);
+  border-color: rgba(244,63,94,.2);
+}
+.proj-key-sobre::before {
+  transform: scaleX(1); /* sempre visível */
+  background: linear-gradient(90deg, var(--accent), #FCA5A5 60%, transparent);
+}
+
+.proj-key-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.proj-key-text {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* =============================================
+   KEY SCREENS — layout editorial 1 + 2
+   ============================================= */
+
+.proj-key-screens {
+  padding: 0 0 80px;
+}
+
+.proj-key-screens-header {
+  margin-bottom: 48px;
+}
+.proj-key-screens-header .section-title {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+/* Wrapper geral empilhado verticalmente */
+.proj-screens-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Linha da tela principal */
+.screens-primary-wrap {
+  width: 100%;
+}
+
+/* Linha das telas secundárias */
+.screens-secondary-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Card de tela genérico */
+.screen-item {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1.5px solid var(--border);
+  background: var(--surface2);
+  cursor: zoom-in;
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              border-color 0.3s ease, box-shadow 0.35s ease;
+  box-shadow: 0 8px 30px rgba(0,0,0,.18);
+}
+.screen-item:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: rgba(244,63,94,.4);
+  box-shadow: 0 24px 64px rgba(0,0,0,.28), 0 0 0 1px rgba(244,63,94,.15);
+}
+
+/* Imagem desktop — ocupa largura total, altura controlada */
+.screen-item img.screen-desktop {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: top center;
+}
+.screen-primary img.screen-desktop  { max-height: 540px; }
+.screen-secondary img.screen-desktop,
+.screen-tertiary img.screen-desktop { max-height: 360px; }
+
+/* Imagem mobile — centralizada, fundo escuro para contrastar */
+.screen-item img.screen-mobile {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  background: #0a0a0f;
+}
+.screen-primary img.screen-mobile  { max-height: 500px; object-fit: cover; object-position: top center; }
+.screen-secondary img.screen-mobile,
+.screen-tertiary img.screen-mobile { max-height: 320px; }
+
+/* Caption que aparece no hover (overlay na base da imagem) */
+.screen-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 28px 20px 18px;
+  background: linear-gradient(to top, rgba(0,0,0,.82) 0%, transparent 100%);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.screen-item:hover .screen-caption { opacity: 1; }
+
+/* Responsive — Key Info */
+@media (max-width: 960px) {
+  .proj-key-info-grid { grid-template-columns: 1fr 1fr; }
+  .proj-key-sobre { grid-column: 1 / -1; }
+}
+@media (max-width: 600px) {
+  .proj-key-info-grid { grid-template-columns: 1fr; }
+  .proj-key-sobre { grid-column: auto; }
+  .screens-secondary-row { grid-template-columns: 1fr; }
+  .proj-key-screens { padding-bottom: 48px; }
+  .proj-key-info { padding: 48px 0; }
+}
+
+
 /* === COVER === */
 .proj-cover {
   position: relative;
@@ -396,6 +690,37 @@
 .step-images .step-img-wrap--landscape {
   grid-column: 1 / -1;
 }
+
+/* Layout fullwidth — coluna única, imagens grandes empilhadas */
+.step-images--fullwidth {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  grid-template-columns: none;
+}
+
+.step-img-wrap--fullwidth {
+  width: 100%;
+  aspect-ratio: unset !important;
+  border-radius: 18px;
+  border: 1.5px solid var(--border);
+  overflow: hidden;
+  background: #f4f5f7;
+  box-shadow: 0 8px 32px rgba(0,0,0,.12);
+  transition: transform var(--ease), box-shadow var(--ease);
+}
+.step-img-wrap--fullwidth img {
+  width: 100%;
+  height: auto !important;
+  display: block;
+  object-fit: contain !important;
+}
+.step-img-wrap--fullwidth:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(0,0,0,.18);
+  border-color: rgba(244,63,94,.35);
+}
+
 
 .step-img-wrap {
   border-radius: 14px;
@@ -979,5 +1304,58 @@
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: .01ms !important;
+  }
+}
+
+/* === MOBILE RESPONSIVE FIXES PARA PROJETOS === */
+@media (max-width: 768px) {
+  /* Fix gigante ícone na capa do projeto (Atris) */
+  .proj-title-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .proj-cover-icon {
+    width: 240px !important;
+    height: 240px !important;
+    border-radius: 24px !important;
+    padding: 8px !important;
+  }
+  
+  /* Fix Hero images (Conecta Jovem) vazando a tela */
+  .proj-hero-section {
+    padding: 0 16px !important;
+  }
+  .proj-hero-img-wrap {
+    border-radius: 12px !important;
+  }
+  .proj-hero-img {
+    object-fit: contain !important;
+  }
+  
+  /* Fix para o passo a passo e o número do lado */
+  .process-step {
+    gap: 16px !important;
+    flex-direction: column; /* Coloca o número em cima no mobile */
+  }
+  .process-steps::before {
+    display: none; /* Remove a linha vertical no mobile para não quebrar o layout */
+  }
+  .step-number {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 0.85rem !important;
+  }
+  
+  /* Fix para as imagens dos passos vazando a tela */
+  .step-images {
+    grid-template-columns: 1fr !important;
+  }
+  .step-img-wrap--landscape {
+    height: auto !important;
+    aspect-ratio: auto !important;
+  }
+  .step-img-wrap--landscape img {
+    height: auto !important;
   }
 }
